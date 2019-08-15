@@ -7,7 +7,9 @@ Automation code for http://automationpractice.com
 
 # Command options
 -Dbrowser=[browser option chrome|firefox]       [ex: -Dbrowser=chrome]
+
 -Dthreads=[number of parallel]                  [ex: -Dthreads=2]
+
 Full command -> "mvn clean install -Dbrowser=chrome -Dthreads=2"
 
 # Report will be generated on test-output directory
