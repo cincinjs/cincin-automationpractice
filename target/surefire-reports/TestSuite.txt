@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 37.898 s <<< FAILURE! - in TestSuite
+SortHighestFirst(com.automationpractice.test.test_cases.Catalog)  Time elapsed: 5.071 s  <<< FAILURE!
+java.lang.AssertionError: expected [false] but found [true]
+	at com.automationpractice.test.test_cases.Catalog.SortHighestFirst(Catalog.java:31)
+

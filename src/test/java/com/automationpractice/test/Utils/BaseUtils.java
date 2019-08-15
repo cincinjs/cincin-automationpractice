@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseUtils {
-    private int timeOut = 10;
+    private int timeOut = 15;
     private int timeOutLong = 30;
 
     public static ExtentReports extent;
@@ -19,15 +19,19 @@ public class BaseUtils {
     WebDriver driver = DriverBase.getDriver();
 
     public void waitElementVisible(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void waitElementVisibleLong(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, timeOutLong);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    public void waitElementNotVisible(WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
 
 
 }

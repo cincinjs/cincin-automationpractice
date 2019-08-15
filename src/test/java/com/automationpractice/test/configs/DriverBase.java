@@ -25,13 +25,15 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 public class DriverBase {
-    public WebDriver driver;
     public ExtentHtmlReporter htmlReporter;
     public ExtentReports extent;
     public ExtentTest test;
 
     private static List<DriverFactory> webDriverThreadPool = Collections.synchronizedList(new ArrayList<DriverFactory>());
     private static ThreadLocal<DriverFactory> driverThread;
+
+    private final String operatingSystem = System.getProperty("os.name").toUpperCase();
+    private final String systemArchitecture = System.getProperty("os.arch");
 
     @BeforeSuite(alwaysRun = true)
     public static void instantiateDriverObject() {
@@ -70,7 +72,10 @@ public class DriverBase {
         htmlReporter.config().setTheme(Theme.DARK);//Default Theme of Report
 
         // General information releated to application
-        extent.setSystemInfo("User Name", "Cincin");
+        extent.setSystemInfo("Tester", "Cincin");
+        extent.setSystemInfo("OS", operatingSystem);
+        extent.setSystemInfo("System Arc", systemArchitecture);
+        extent.setSystemInfo("Browser", String.valueOf(getDriver()));
 
     }
 
@@ -103,6 +108,7 @@ public class DriverBase {
             test.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " Test Case PASSED", ExtentColor.GREEN));
         }
         test.log(Status.INFO, "====== " + "TEST [<b>" + result.getName() + "</b> ] FINISHED ======");
+//        clearCookies();
     }
 
     public static String TakeScreenshot(WebDriver driver, String screenshotName) throws IOException {
@@ -115,6 +121,11 @@ public class DriverBase {
         File finalDestination = new File(destination);
         FileUtils.copyFile(source, finalDestination);
         return destination;
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public static void clearCookies() {
+        getDriver().manage().deleteAllCookies();
     }
 
 }

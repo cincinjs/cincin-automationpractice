@@ -57,22 +57,22 @@ public class HomePg extends BaseUtils {
         btnSubmitSearch.click();
     }
 
-    public void clickBtnCart(){
+    public void clickBtnCart() {
         waitElementVisible(btnCart);
         btnCart.click();
     }
 
-    public void clickCategoryWoman(){
+    public void clickCategoryWoman() {
         waitElementVisible(lblCatagoryWoman);
         lblCatagoryWoman.click();
     }
 
-    public void clickCategoryDresses(){
+    public void clickCategoryDresses() {
         waitElementVisible(lblCatagoryDresses);
         lblCatagoryDresses.click();
     }
 
-    public void clickCategoryTShirts(){
+    public void clickCategoryTShirts() {
         waitElementVisible(lblCatagoryTShirts);
         lblCatagoryTShirts.click();
     }
