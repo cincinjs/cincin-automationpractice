@@ -3,7 +3,7 @@
 <suite name="TestSuite" thread-count="1" parallel="methods" >
     <test name="Test">
         <classes>
-            <class name="com.automationpractice.test.test_cases.Test"></class>
+            <class name="com.automationpractice.test.test_cases.Home"></class>
         </classes>
     </test>
 </suite>
