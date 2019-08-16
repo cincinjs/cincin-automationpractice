@@ -1,0 +1,54 @@
+Bug Report 
+
+Title : Sort by Highest First price value is not working
+
+ENV : PROD
+Browser : Chrome, Firefox
+Priority : High
+
+Actual Result :
+Appear loading animation forever,
+and Product isn't sorted based on Highest First
+Response Code  403 Forbidden
+
+Expected Result : 
+Sort by Highest First price should working,
+Product should sorted based on Highest price first,
+Loading animation should be disappear after result was sorted
+
+
+
+Step to reproduce :
+1. Open http://automationpractice.com
+2. Click Woman Catalog
+3. Click "Sort By" dropdown
+4. Choose "Price: Highest first"
+
+LOG 
+Request URL: http://automationpractice.com/modules/blocklayered/blocklayered-ajax.php?id_category_layered=3&layered_price_slider=16_53&orderby=name&orderway=desctrue&_=1565940407768
+Request Method: GET
+Status Code: 403 Forbidden
+Remote Address: 198.46.81.188:80
+Referrer Policy: no-referrer-when-downgrade
+
+Response Header :
+HTTP/1.1 403 Forbidden
+Date: Fri, 16 Aug 2019 07:29:50 GMT
+Server: Apache
+Content-Length: 228
+Keep-Alive: timeout=3, max=100
+Connection: Keep-Alive
+Content-Type: text/html; charset=iso-8859-1
+
+Request Header :
+GET /modules/blocklayered/blocklayered-ajax.php?id_category_layered=3&layered_price_slider=16_53&orderby=price&orderway=desctrue&_=1565940535780 HTTP/1.1
+Host: automationpractice.com
+Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.35 Safari/537.36
+Referer: http://automationpractice.com/index.php?id_category=3&controller=category
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Cookie: PrestaShop-a30a9934ef476d11b6cc3c983616e364=EGDnIwOK%2FIk5bjujRZyUUYI98BKeTC4YMqeVKJjFJvvKGvWWLGxU9hGs24HC65xw9%2B9iyclnDRHm4Ngv8B6FeLlcV%2B1TkwOzjJoiG3dzvibfmBAXRxpiiTgaJ793Ne5z85tHvR3zvRHhEIc9%2FHQX78Klv23cQ%2BA6qXjRq9EL9Q0cWjATYx0c4xieDnn3dFWXc%2B0Z4eFg9aerO6BqBeTfCweH4I1c8JCQol0Y1m7cA6iVibECsSpekgaYq9bnd%2BsO9GmFAV2BT%2BOmpf1VbfElq5Ek4bRcwMiaATjkSNhHE0M%3D000218
+
